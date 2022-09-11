@@ -1,13 +1,20 @@
 {
-  "name": "spacesheep",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "name": "nextspace",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "vercel dev",
-    "deploy": "vercel deploy --prod"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "12.3.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "vercel": "^28.2.4"
+    "eslint": "8.23.0",
+    "eslint-config-next": "12.3.0"
   }
 }
