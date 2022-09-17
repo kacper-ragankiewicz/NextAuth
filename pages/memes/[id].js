@@ -5,7 +5,7 @@ export default function Mem({ mem: {name, url} }) {
     return (
         <>
             <h1>mem</h1>
-            <img src={url} alt={`Mem ${name}`}/>
+            <img src={url} alt={`Memo ${name}`}/>
         </>
     )
 }
