@@ -1,0 +1,12 @@
+@use '../../styles/main.sass';
+
+.container {
+    width: 100vw;
+    height: 40px;
+    margin-top: 100vh;
+    text-align: center;
+}
+
+.container > span {
+    color: main.$m2;
+}

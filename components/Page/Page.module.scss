@@ -1,0 +1,12 @@
+@use '../../styles/main.sass';
+
+.container {
+    width: 80vw;
+    margin: auto;
+}
+
+@media (max-width: main.$m) {
+    .container {
+        width: 90vw;
+    }
+}
