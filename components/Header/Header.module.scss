@@ -62,7 +62,7 @@
 }
 
 .img {
-    scale: 0.65;
+    scale: 0.8;
     display: none;
     width: 50px;
     height: auto;
@@ -101,12 +101,15 @@
     .img {
         display: flex;
     }
+    .pushed {
+        background: main.$m4;
+    }
     .box {
         display: flex;
         position: absolute;
         visibility: visible;
         z-index: 0;
-        background: main.$m1;
+        background: main.$m2;
         justify-content: center;
         width: 100vw;
         transition: 1s;
@@ -115,11 +118,9 @@
     .active {
         visibility: visible;
         opacity: 1;
-        margin-top: -20px;
+        margin-top: -30px;
         transform: translate(0,0);
-    }
-    .pushed {
-        background: main.$m2;
+        border-radius: 15px;
     }
     .ul {
         color: main.$m0;
