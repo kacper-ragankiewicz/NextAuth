@@ -29,7 +29,7 @@ export default function Header() {
     const listElement = list.map(list => <ListElement key={list.id} {...list} />)
     return (
         <>
-            <div className={styles.container}>
+            <div className={cn(styles.container, { [styles.shadow]: visible })}>
                     <div className={styles.navbar}>
                         <header className={styles.logo}>Next<span>JS</span></header>
                         <nav className={styles.menu}>
