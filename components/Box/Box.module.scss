@@ -1,0 +1,97 @@
+@use "../../styles/main.sass";
+
+.box {
+    flex: 1 355px;
+    background: main.$m5;
+    border-radius: 3rem;
+    padding: 3.5rem 2rem;
+    position: relative;
+    backdrop-filter: blur(100px);
+    animation: grow .5s ease-in-out;
+    margin: 5px;
+    border: 2px solid;
+    border-color: transparent transparent main.$m6 transparent;
+    transition: .5s;
+}
+
+.title {
+    margin-right: auto;
+    font-size: 1.4rem;
+    border-radius: 50px;
+    width: 100%;
+    background: main.$m3;
+}
+
+.desc {
+    font-weight: 300;
+    padding: 0px;
+}
+
+.body {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+}
+
+.body > .li {
+    flex: 1 1 110px;
+    text-align: center;
+    padding: .6rem;
+    border-radius: 2rem;
+    background: transparent;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    transition: 0.4s linear;
+    font-weight: 400;
+    animation: move 4s ease-in-out infinite;
+}
+
+.button {
+    border: 0;
+    height: 50px;
+    width: auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    background: main.$m2;
+    border-radius: 2rem;
+    transition: 0.4s linear;
+}
+
+.href {
+    color: main.$m1;
+    text-align: center;
+    text-decoration: none;
+    padding: .6rem 2rem;
+    background: transparent;
+    font-size: 1rem;
+}
+
+@keyframes opacity {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0,0);
+    }
+    50% {
+        transform: translate(0,4px);
+    }
+    100% {
+        transform: translate(0,0);
+    }
+}
+
+@keyframes grow {
+    from {
+        border-radius: 0;
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+

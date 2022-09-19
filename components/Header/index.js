@@ -10,7 +10,8 @@ import menu from "../../styles/img/menu.png";
 const list = [
     {item: 'Home', url: "/"},
     {item: 'About', url: "#"},
-    {item: "Github", url: "https://github.com"}
+    {item: "Github", url: "https://github.com"},
+    {item: "Test", url: "/test"},
 ]
 
 function ListElement({url, item}) {
@@ -31,7 +32,7 @@ export default function Header() {
         <>
             <div className={cn(styles.container, { [styles.shadow]: visible })}>
                     <div className={styles.navbar}>
-                        <header className={styles.logo}>Next<span>JS</span></header>
+                        <header className={styles.logo}>Martyna<span>❤️</span></header>
                         <nav className={styles.menu}>
                             <ul className={styles.ul}>
                                 {listElement}
