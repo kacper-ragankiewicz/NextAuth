@@ -27,35 +27,36 @@ export default function Header() {
     const [visible, setVisible] = React.useState(false);
 
     const listElement = list.map(list => <ListElement key={list.id} {...list} />)
-    console.log(visible)
     return (
-        <div className={styles.container}>
-                <div className={styles.navbar}>
-                    <header className={styles.logo}>Next<span>JS</span></header>
-                    <nav className={styles.menu}>
-                        <ul className={styles.ul}>
-                            {listElement}
-                        </ul>
-                    </nav>
-                    {/* Toggling menu */}
-                        <buton
-                            className={styles.img}
-                            onClick={() => setVisible(!visible)}
-                        >
-                            <Image
-                                src={menu}
-                                alt="Menu IMG"
-                                width={50}
-                                height={50}
-                                className={styles.picture}
-                            />
-                        </buton>
+        <>
+            <div className={styles.container}>
+                    <div className={styles.navbar}>
+                        <header className={styles.logo}>Next<span>JS</span></header>
+                        <nav className={styles.menu}>
+                            <ul className={styles.ul}>
+                                {listElement}
+                            </ul>
+                        </nav>
+                        {/* Toggling menu */}
+                            <buton
+                                className={cn(styles.img, { [styles.pushed]: visible })}
+                                onClick={() => setVisible(!visible)}
+                            >
+                                <Image
+                                    src={menu}
+                                    alt="Menu IMG"
+                                    width={50}
+                                    height={50}
+                                    className={styles.picture}
+                                />
+                            </buton>
+                </div>
             </div>
             <nav className={cn(styles.box, { [styles.active]: visible })}>
                 <ul className={styles.ul}>
                     {listElement}
                 </ul>
             </nav>
-        </div>
+        </>
     )
 }
