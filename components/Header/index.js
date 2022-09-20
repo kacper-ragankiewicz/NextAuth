@@ -36,9 +36,12 @@ export default function Header() {
                         <nav className={styles.menu}>
                             <ul className={styles.ul}>
                                 {listElement}
+                                <a href='/login'><span>Login</span></a>
                             </ul>
                         </nav>
                         {/* Toggling menu */}
+                        <div className={styles.control}>
+                            <a href='/login'><span className={styles.login}>Log in</span></a>
                             <buton
                                 className={cn(styles.img, { [styles.pushed]: visible })}
                                 onClick={() => setVisible(!visible)}
@@ -51,7 +54,9 @@ export default function Header() {
                                     className={styles.picture}
                                 />
                             </buton>
-                </div>
+                            {/* <button className={styles.button}>Scroll</button> */}
+                        </div>
+                    </div>
             </div>
             <nav className={cn(styles.box, { [styles.active]: visible })}>
                 <ul className={styles.ul}>

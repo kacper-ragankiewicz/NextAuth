@@ -81,9 +81,23 @@
     scale: 0.8;
 }
 
+.login {
+    display: none;
+}
+
+.control {
+    display: none;
+}
+
 .box {
     display: none;
 }
+
+.button {
+    background: main.$m1;
+    cursor: pointer;
+}
+
 
 @keyframes slide-in {
     to {
@@ -135,5 +149,13 @@
     .ul > li {
         padding: 10px;
         text-align: left;
+    }
+    .login {
+        display: flex;
+
+        padding: main.$header-size / 4.5;
+    }
+    .control {
+        display: flex;
     }
 }
