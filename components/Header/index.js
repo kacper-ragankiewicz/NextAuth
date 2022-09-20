@@ -11,13 +11,13 @@ const list = [
     {item: 'Home', url: "/"},
     {item: 'About', url: "#"},
     {item: "Github", url: "https://github.com"},
-    {item: "Test", url: "/test"},
 ]
 
-function ListElement({url, item}) {
+function ListElement({url, item, icon}) {
     return (
         <li>
             <a href={url}>
+                {icon && <span>{icon}</span>}
                 {item}
             </a>
         </li>
@@ -32,7 +32,7 @@ export default function Header() {
         <>
             <div className={cn(styles.container, { [styles.shadow]: visible })}>
                     <div className={styles.navbar}>
-                        <header className={styles.logo}>Martyna<span>❤️</span></header>
+                        <header className={styles.logo}>FindUr<span>URL</span></header>
                         <nav className={styles.menu}>
                             <ul className={styles.ul}>
                                 {listElement}

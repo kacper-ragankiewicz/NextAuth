@@ -41,7 +41,7 @@
     text-align: center;
     padding: .6rem;
     border-radius: 2rem;
-    background: transparent;
+    background: main.$m6;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     transition: 0.4s linear;
     font-weight: 400;
@@ -51,9 +51,9 @@
 .button {
     border: 0;
     height: 50px;
-    width: auto;
+    width: 120px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    background: main.$m2;
+    background: main.$m3;
     border-radius: 2rem;
     transition: 0.4s linear;
 }

@@ -27,16 +27,13 @@ export default function Test({isRequestFailed, hero, count}) {
   console.log(hero)
 
   return (
-    <Page>
-      <main className={styles.main}>
+        <main className={styles.main}>
         <h1>Hero encykloperdia</h1>
         <ul>
           {ApiElements}
         </ul>
 
       </main>
-    </Page>
-
   )
 }
 
