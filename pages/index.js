@@ -4,65 +4,35 @@ import axios from '../helpers/axios';
 import Link from 'next/link';
 import styles from '../styles/Home.module.scss';
 
-const box = [
-    {title: 'hello1', desc: "desc"},
-    {title: 'hello2'},
-    {title: 'hello3'},
-    {title: 'hello4'},
-    {title: 'hello5'},
-]
 
-// const hero = [
-//   {API: "hello"},
-//   {API: "Hello2"}
-// ]
+export default class Home extends React.Component {
 
-function BoxList({ title, desc, Link}) {
-    return (
-        <Box
-            title={title}
-            desc={desc}
-            url={Link}
-        />
-    )
-}
+  ApiElements = this.props.hero.map(hero => <this.ApiCall key={hero.id} {...hero} /> )
 
-function Api({ API, Description, Link, Category }) {
-      return (
-        <Box
-            title={API}
-            desc={Description}
-            object={[Category]}
-            url={Link}
-        />
-    )
-  // return (
-  //   <li className={styles.li}>
-  //     <Link href={`/hero`}>
-  //       <a>
-  //         <p>{API}</p>
-  //       </a>
-  //     </Link>
-  //   </li>
-  // )
-};
+  ApiCall({ API, Description, Link, Category }) {
+        return (
+          <Box
+              title={API}
+              desc={Description}
+              object={[Category]}
+              url={Link}
+          />
+      )
+  };
 
-export default function Main({isRequestFailed, hero, count}) {
-   if (isRequestFailed) {
-    return <p>Oops something went wrong....</p>
-    }
+  render () {
 
+    if (this.props.isRequestFailed) {
+     return <p>Oops something went wrong....</p>
+     }
 
-    const boxesArrey = box.map(box => <BoxList key={box.id} {...box}/>)
-    const ApiElements = hero.map(hero => <Api key={hero.id} {...hero} /> )
-
-    return (
-      <div className={styles.container}>
-        {ApiElements}
-      </div>
-    )
+     return (
+       <div className={styles.container}>
+         {this.ApiElements}
+       </div>
+     )
   }
-
+}
 
   export async function getStaticProps() {
     const { data, status } = await axios.get('/entries');

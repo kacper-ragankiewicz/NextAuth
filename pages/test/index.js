@@ -5,36 +5,41 @@ import axios from '../../helpers/axios';
 import styles from './Test.module.scss';
 
 import Page from "../../components/Page";
+import { setRevalidateHeaders } from 'next/dist/server/send-payload';
+import React from 'react';
 
 
-function ApiElement({id, API}) {
-  return (
-    <li className={styles.li}>
-      <Link href={`/hero/${id}`}>
-        <a>
-          <p>{API}</p>
-        </a>
-      </Link>
-    </li>
-  )
-};
+export default class test extends React.Component {
 
-export default function Test({isRequestFailed, hero, count}) {
-  if (isRequestFailed) {
-    return <p>Oops something went wrong....</p>
+
+  ApiElements = this.props.hero.map(hero => <this.ApiElement key={hero.id} {...hero} /> )
+
+  ApiElement({id, API}) {
+    return (
+      <li className={styles.li}>
+        <Link href={`/hero/${id}`}>
+          <a>
+            <p>{API}</p>
+          </a>
+        </Link>
+      </li>
+    )
+  };
+
+  render () {
+    return (
+          <Page>
+            <main className={styles.main}>
+              <h1>Hero encykloperdia</h1>
+              <ul>
+                {this.ApiElements}
+              </ul>
+            </main>
+          </Page>
+    )
   }
-  const ApiElements = hero.map(hero => <ApiElement key={hero.id} {...hero} /> )
-  console.log(hero)
 
-  return (
-        <main className={styles.main}>
-        <h1>Hero encykloperdia</h1>
-        <ul>
-          {ApiElements}
-        </ul>
 
-      </main>
-  )
 }
 
 

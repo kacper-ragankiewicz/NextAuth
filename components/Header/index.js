@@ -8,12 +8,12 @@ import Link from 'next/link';
 import menu from "../../styles/img/menu.png";
 
 const list = [
-    {item: 'Home', url: "/"},
+    {item: 'Home', url: "/", active: true},
     {item: 'About', url: "#"},
     {item: "Github", url: "https://github.com"},
 ]
 
-function ListElement({url, item, icon}) {
+function ListElement({url, item, icon, active}) {
     return (
         <li>
             <a href={url}>
