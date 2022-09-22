@@ -36,12 +36,12 @@ export default function Header() {
                         <nav className={styles.menu}>
                             <ul className={styles.ul}>
                                 {listElement}
-                                <a href='/login'><span>Login</span></a>
+                                <li><Link href='/login'><span>Login</span></Link></li>
                             </ul>
                         </nav>
                         {/* Toggling menu */}
                         <div className={styles.control}>
-                            <a href='/login'><span className={styles.login}>Log in</span></a>
+                            <Link href='/login'><span className={styles.login}>Log in</span></Link>
                             <buton
                                 className={cn(styles.img, { [styles.pushed]: visible })}
                                 onClick={() => setVisible(!visible)}
