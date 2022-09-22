@@ -29,7 +29,7 @@ export default function Header() {
 
     const listElement = list.map(list => <ListElement key={list.id} {...list} />)
     return (
-        <>
+        <div>
             <div className={cn(styles.container, { [styles.shadow]: visible })}>
                     <div className={styles.navbar}>
                         <header className={styles.logo}>FindUr<span>URL</span></header>
@@ -63,6 +63,6 @@ export default function Header() {
                     {listElement}
                 </ul>
             </nav>
-        </>
+        </div>
     )
 }
