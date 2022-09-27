@@ -37,7 +37,7 @@ function NavLink({ item, href, exact, ...props }) {
 
     return (
             <li>
-                <Link onClick={() => setVisible(false)} href={href} {...props}>{item}</Link>
+                <Link href={href} {...props}>{item}</Link>
             </li>
         )
 }
@@ -73,7 +73,7 @@ export default function Header() {
                         </nav>
                         {/* Toggling menu */}
                         <div className={styles.control}>
-                            <Link onClick={() => setVisible(false)} href='/account/login'><span className={styles.login}>Log in</span></Link>
+                            <Link href='/account/login'><span className={styles.login}>Log in</span></Link>
                             <buton
                                 className={cn(styles.img, { [styles.pushed]: visible })}
                                 onClick={() => setVisible(!visible)}

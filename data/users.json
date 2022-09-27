@@ -1,11 +1,29 @@
 [
     {
         "firstName": "kacper",
-        "lastName": "kacper",
+        "lastName": "kacper2",
         "username": "kacper",
         "hash": "$2a$10$OqXZc5mkqi5IphYWF7DzIOg8ESyhsIzt.0TYIkkmCgRKBqOwiZMbm",
         "id": 1,
         "dateCreated": "2022-09-27T21:27:22.928Z",
         "dateUpdated": "2022-09-27T21:27:22.928Z"
+    },
+    {
+        "firstName": "kacper2",
+        "lastName": "asdasd",
+        "username": "asdasd",
+        "hash": "$2a$10$iLRR0mFeFNoePqIwLUdij.pgHT7/v7f9WXF7wiGFreppyJQGiwEZ.",
+        "id": 2,
+        "dateCreated": "2022-09-27T21:58:22.028Z",
+        "dateUpdated": "2022-09-27T21:58:22.028Z"
+    },
+    {
+        "firstName": "Roko",
+        "lastName": "Roko",
+        "username": "Roko321",
+        "hash": "$2a$10$Rg4NrMNx5wr5nPz60zuLNOw6Nh.ndGvm.h0j4ZJJUdaXiWQNDh/R6",
+        "id": 3,
+        "dateCreated": "2022-09-27T22:09:20.532Z",
+        "dateUpdated": "2022-09-27T22:09:20.532Z"
     }
 ]
