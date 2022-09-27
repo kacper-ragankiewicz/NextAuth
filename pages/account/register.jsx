@@ -14,7 +14,7 @@ export default Register;
 function Register() {
     const router = useRouter();
 
-    // form validation rules 
+    // form validation rules
     const validationSchema = Yup.object().shape({
         firstName: Yup.string()
             .required('First Name is required'),
@@ -78,20 +78,5 @@ function Register() {
                 ]
             }
         />
-
-        // <Layout>
-        //     <div className="card">
-        //         <h4 className="card-header">Register</h4>
-        //         <div className="card-body">
-        //             <form onSubmit={handleSubmit(onSubmit)}>
-        //                 <button disabled={formState.isSubmitting} className="btn btn-primary">
-        //                     {formState.isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
-        //                     Register
-        //                 </button>
-        //                 <Link href="/account/login" className="btn btn-link">Cancel</Link>
-        //             </form>
-        //         </div>
-        //     </div>
-        // </Layout>
     );
 }

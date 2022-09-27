@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import PropTypes from "prop-types";
 import styles from './Header.module.scss';
@@ -6,16 +6,17 @@ import cn from 'classnames';
 import { useRouter } from "next/router";
 
 import { Link } from "components";
+import { userService } from 'services';
 
 //  assets
 import menu from "../../styles/img/menu.png";
+
 
 const list = [
     {item: 'Home', href: "/", exact: true, },
     {item: 'About', href: "#"},
     {item: "Github", href: "https://github.com"},
 ]
-
 
 NavLink.PropTypes = {
     href: PropTypes.string.isRequired,
@@ -36,15 +37,26 @@ function NavLink({ item, href, exact, ...props }) {
 
     return (
             <li>
-                <Link href={href} {...props}>{item}</Link>
+                <Link onClick={() => setVisible(false)} href={href} {...props}>{item}</Link>
             </li>
         )
 }
 
 export default function Header() {
-    const [visible, setVisible] = React.useState(false);
+    const [visible, setVisible] = useState(false);
+    const [user, setUser] = useState(null)
 
     const listElement = list.map(list => <NavLink key={list.id} {...list} />)
+
+    useEffect(() => {
+        const subscription = userService.user.subscribe(x => setUser(x));
+        return () => subscription.unsubscribe();
+    }, []);
+
+    function logout() {
+        userService.logout();
+    }
+
     return (
         <div>
             <div className={cn(styles.container, { [styles.shadow]: visible })}>
@@ -53,7 +65,7 @@ export default function Header() {
                         <nav className={styles.menu}>
                             <ul className={styles.ul}>
                                 {listElement}
-                                <li><Link href='/account/login'><span>Login</span></Link></li>
+                                <li><Link href='/account/login'><span>{!user ? 'Log in' : 'Log out'}</span></Link></li>
                             </ul>
                         </nav>
                         {/* Toggling menu */}
