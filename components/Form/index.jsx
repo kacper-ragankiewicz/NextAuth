@@ -22,6 +22,7 @@ function Login({
     items,
     urlName,
     handleSubmit,
+    buttonSpan,
     formState,
 }) {
 
@@ -35,7 +36,7 @@ function Login({
                         {formElements}
                         <button disabled={formState}>
                             {formState && <span className="spinner-border spinner-border-sm mr-1"></span>}
-                            Login
+                            {buttonSpan ? buttonSpan : "text"}
                         </button>
                         {  url && <Link href={url}>{urlName}</Link> }
                     </form>

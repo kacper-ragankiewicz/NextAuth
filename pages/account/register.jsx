@@ -48,6 +48,7 @@ function Register() {
             formState={formState.isSubmitting}
             url="/account/login"
             urlName="Cancel"
+            buttonSpan="Register"
             items={
                 [
                     {

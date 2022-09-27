@@ -43,6 +43,7 @@ function Login() {
         formState={formState.isSubmitting}
         url="/account/register"
         urlName="Register"
+        buttonSpan="Login"
         items={
             [
                 {

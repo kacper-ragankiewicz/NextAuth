@@ -65,7 +65,10 @@ export default function Header() {
                         <nav className={styles.menu}>
                             <ul className={styles.ul}>
                                 {listElement}
-                                <li><Link href='/account/login'><span>{!user ? 'Log in' : 'Log out'}</span></Link></li>
+                                {!user
+                                    ?   <li><Link href='/account/login'><span>Log in</span></Link></li>
+                                    :   <li onClick={logout}><span>Log out</span></li>
+                                }
                             </ul>
                         </nav>
                         {/* Toggling menu */}
