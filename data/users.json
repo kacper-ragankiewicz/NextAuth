@@ -1,1 +1,11 @@
-[]
+[
+    {
+        "firstName": "kacper",
+        "lastName": "kacper",
+        "username": "kacper",
+        "hash": "$2a$10$OqXZc5mkqi5IphYWF7DzIOg8ESyhsIzt.0TYIkkmCgRKBqOwiZMbm",
+        "id": 1,
+        "dateCreated": "2022-09-27T21:27:22.928Z",
+        "dateUpdated": "2022-09-27T21:27:22.928Z"
+    }
+]
