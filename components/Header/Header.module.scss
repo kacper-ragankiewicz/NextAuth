@@ -61,6 +61,10 @@
     list-style-type: none;
 }
 
+.ul > li > span {
+    cursor: pointer;
+}
+
 .img {
     scale: 0.8;
     display: none;

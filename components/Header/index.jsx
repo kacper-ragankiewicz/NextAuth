@@ -1,33 +1,50 @@
 import React from 'react';
 import Image from 'next/image';
+import PropTypes from "prop-types";
 import styles from './Header.module.scss';
 import cn from 'classnames';
-import Link from 'next/link';
+import { useRouter } from "next/router";
+
+import { Link } from "components";
 
 //  assets
 import menu from "../../styles/img/menu.png";
 
 const list = [
-    {item: 'Home', url: "/", active: true},
-    {item: 'About', url: "#"},
-    {item: "Github", url: "https://github.com"},
+    {item: 'Home', href: "/", exact: true, },
+    {item: 'About', href: "#"},
+    {item: "Github", href: "https://github.com"},
 ]
 
-function ListElement({url, item, icon, active}) {
+
+NavLink.PropTypes = {
+    href: PropTypes.string.isRequired,
+    exact: PropTypes.bool
+};
+
+NavLink.defaultProps = {
+    exact: false
+};
+
+function NavLink({ item, href, exact, ...props }) {
+    const { pathname } = useRouter();
+    const isActive = exact ? pathname === href : pathname.startsWith(href);
+
+    if (isActive) {
+        props.className += ' active';
+    }
+
     return (
-        <li>
-            <a href={url}>
-                {icon && <span>{icon}</span>}
-                {item}
-            </a>
-        </li>
-    )
+            <li>
+                <Link href={href} {...props}>{item}</Link>
+            </li>
+        )
 }
 
 export default function Header() {
     const [visible, setVisible] = React.useState(false);
 
-    const listElement = list.map(list => <ListElement key={list.id} {...list} />)
+    const listElement = list.map(list => <NavLink key={list.id} {...list} />)
     return (
         <div>
             <div className={cn(styles.container, { [styles.shadow]: visible })}>
@@ -36,12 +53,12 @@ export default function Header() {
                         <nav className={styles.menu}>
                             <ul className={styles.ul}>
                                 {listElement}
-                                <li><Link href='/login'><span>Login</span></Link></li>
+                                <li><Link href='/account/login'><span>Login</span></Link></li>
                             </ul>
                         </nav>
                         {/* Toggling menu */}
                         <div className={styles.control}>
-                            <Link href='/login'><span className={styles.login}>Log in</span></Link>
+                            <Link href='/account/login'><span className={styles.login}>Log in</span></Link>
                             <buton
                                 className={cn(styles.img, { [styles.pushed]: visible })}
                                 onClick={() => setVisible(!visible)}

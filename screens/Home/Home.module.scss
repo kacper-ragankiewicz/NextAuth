@@ -1,11 +1,5 @@
-@use "./main.sass";
-
 .container {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
-}
-
-@media (max-width: main.$m) {
-
 }

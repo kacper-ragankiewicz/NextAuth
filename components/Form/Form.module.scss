@@ -1,12 +1,14 @@
+
 @use '../../styles/main.sass';
 
-$box-height: 300px;
+$box-height: auto;
 
 .form {
     display: block;
     text-align: center;
     width: 95%;
     height: $box-height;
+    padding: 20px;
     background: main.$m5;
     border-radius: 15px;
     margin: 0 auto auto auto;
@@ -15,7 +17,6 @@ $box-height: 300px;
 .form > form {
     display: inline-block;
     text-align: left;
-    margin-top: 60px;
     width: 50%;
 }
 

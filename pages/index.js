@@ -1,56 +1,11 @@
 import React from 'react';
-import Box from '../components/Box';
-import axios from '../helpers/axios';
-import Link from 'next/link';
-import styles from '../styles/Home.module.scss';
 
-
-export default class Home extends React.Component {
-
-  ApiElements = this.props.hero.map(hero => <this.ApiCall key={hero.id} {...hero} /> )
-
-  ApiCall({ API, Description, Link, Category }) {
-        return (
-          <Box
-              title={API}
-              desc={Description}
-              object={[Category]}
-              url={Link}
-          />
-      )
-  };
-
+export default class Main extends React.Component {
   render () {
-
-    if (this.props.isRequestFailed) {
-     return <p>Oops something went wrong....</p>
-     }
-
-     return (
-       <div className={styles.container}>
-         {this.ApiElements}
-       </div>
-     )
+    return(
+      <>
+        <h1>Hello</h1>
+      </>
+    )
   }
 }
-
-  export async function getStaticProps() {
-    const { data, status } = await axios.get('/entries');
-    if (status !== 200 ) {
-      return {
-        props: {
-          isRequestFailed: true,
-        }
-      }
-    }
-    const { count, entries } = data;
-    const hero = entries?.map(({id, API, Description, Link, Category}) => ({ API, Description, Link, Category }));
-    return {
-      props: {
-        count,
-        hero,
-        isRequestFailed: false,
-        test: true,
-      }
-    }
-  }
